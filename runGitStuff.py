@@ -42,7 +42,7 @@ def getStatus():
 		os.system('cd '+repository+repositoryFolder+' && "'+git+'git" '+command0+'')
 
 def writeToRepository():
-		commitComment = ''+getRepo[2]+''
+		commitComment = ""+''.join(getRepo[2])+""
 		os.system('cd '+repository+repositoryFolder+' && "'+git+'git" '+command4+' '+commitComment+'')
 
 def getLatest():
@@ -64,12 +64,7 @@ elif raw_input('Write Changes to Repo: ') == 'yes':
 	print('\n')
 
 	getRepo.append(comment)
-
-
-	if (len(getRepo) >= 3):
-		if getRepo[0] == 'msc-online-registration' and getRepo[1] == 'OnlineReg' and getRepo[2] != '':
-			
-			writeToRepository()
+	writeToRepository()
 
 elif raw_input('Get Latest: ') == 'yes':
 	print('\n')
