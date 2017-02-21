@@ -44,7 +44,7 @@ try:
 	
 	getRepo.append(mydict[int(chosenOption)])
 	
-	getRepo.append(choseBranch[0])
+	getRepo.append(choseBranch)
 	
 	repositoryFolder = ""+getRepo[0]+"\\"
 	branch = getRepo[1]
@@ -69,7 +69,7 @@ try:
 			os.system('cd '+repository+repositoryFolder+' && "'+git+'git" '+command2+'')
 	
 	def uploadChanges():
-			os.system('cd '+repository+repositoryFolder+' && "'+git+'git" '+command3+' '+branch+'')
+			os.system('cd '+repository+repositoryFolder+' && "'+git+'git" '+command3+' '+choseBranch+'')
 	
 	def makeBranch():
 		os.system('cd '+repository+repositoryFolder+' && "'+git+'git" '+command6+' '+branch+'')
@@ -133,6 +133,8 @@ try:
 			uploadChanges()
 	
 			print('\n')
+		else:
+			uploadChanges()
 	
 	else:
 		print('Does Not look you want to do anything :)')
